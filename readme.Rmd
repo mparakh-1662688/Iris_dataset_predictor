@@ -1,0 +1,38 @@
+---
+title: "Iris Analyses"
+output: html_document
+---
+
+
+## Brief 
+
+We are trying to predict the type of flower based on its physical features like the sepal length, sepal width, petal length, and petal width. In our shiny app, you can see the univariate visualizations of these particular variables to grasp a better understanding. Now we will try to see some multivariate plots to find some correlation.
+
+```{r, echo= FALSE, results='hide', warning=FALSE}
+# source("iris_dataset.R")
+```
+
+
+```{r setup, include=FALSE}
+source("iris_dataset.R")
+
+knitr::opts_chunk$set(echo = T,
+                      results = "hide")
+```
+
+
+```{r, echo= FALSE}
+featurePlot(x, y, plot="box")
+featurePlot(x, y, plot="ellipse")
+scale <- list(list(relation="free"),list(relation="free"))
+featurePlot(x = x, y = y, plot = "density", scales = scale)
+```
+
+1st graph - 
+You can see the whisker plots of each variable for all the three different kinds of flowers can be seen.
+
+2nd graph - 
+You can see the classification of each variable for all the three different kinds of flowers can be seen. (also find helpful to find general trends)
+
+3rd graph - 
+Overview of all the comparisons that have been shown in the above two figures
